@@ -76,10 +76,10 @@ function initialize() {
       // 経路探索時のマーカーなし
   });
   //  var ginza = new google.maps.LatLng(35.6729463,139.7634783);
-  var ginza = targetCodeAddress();
+  var kanda = targetCodeAddress();
   var mapOptions = {
     zoom:17,
-    center: ginza,
+    center: kanda,
     mapTypeId: google.maps.MapTypeId.ROADMAP,
     scaleControl: false,
   }
@@ -131,7 +131,7 @@ function startCodeAddress(address) {
 
 // 到着地点の設定と緯度経度をグローバル変数にセット
 function targetCodeAddress() {
-    return codeAddress('アロマスクールラヴァーレ銀座校', callbackTargetPosition);
+    return codeAddress('神田明神', callbackTargetPosition);
 }
 
 //  メニューの変更が行われたらルート探索を開始する
@@ -142,7 +142,7 @@ function calcRoute() {
   var startpos = document.getElementById('start').value;
   if (startpos != "") {
       removeMarkers();
-      codeAddress('アロマスクールラヴァーレ銀座校', callbackNone);
+      codeAddress('神田明神', callbackNone);
       var start = startCodeAddress(startpos);
   }
 }
